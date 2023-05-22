@@ -1,5 +1,5 @@
 
-# React-project
+# Expenses Manager App
 
 
 ## Tech Stack
