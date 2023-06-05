@@ -26,6 +26,7 @@ const saveExpenseDataHandler = (enteredExpenseData:ExpenseData) => {
         id: Math.random().toString()
     }
     props.onAddExpense(expenseData)
+    console.log("Im in new");
     console.log(expenseData);
 }
     return(
