@@ -7,6 +7,7 @@ import ExpensesFilter from './ExpensesFilter';
 
 interface ExpensesProps {
 	items: Array<{
+		id: number| string;
 		title: string;
 		amount: number;
 		date: Date;
@@ -14,20 +15,24 @@ interface ExpensesProps {
 }
 
 function Expenses(props: ExpensesProps) {
-	const [enteredYear,setYear] = useState('2021');
+	const [enteredYear, setYear] = useState('2021');
 
 	const setYearHandler = (selectedYear: string) => {
-	console.log("im in expenses component");
-	setYear(selectedYear);
-	}
-
-
+		console.log('im in expenses component');
+		setYear(selectedYear);
+	};
+	const filteredExpenses = props.items.filter(expense => {
+			return expense.date.getFullYear().toString() === enteredYear
+		})
+		
 	return (
 		<div>
 			<Card className='expenses'>
-			<ExpensesFilter selected={enteredYear} onSetYear={setYearHandler}/>
-			{props.items.map(expense => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date}/>)}
-		</Card>
+				<ExpensesFilter selected={enteredYear} onSetYear={setYearHandler} />
+				{filteredExpenses.map(expense => (
+					<ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />
+				))}
+			</Card>
 		</div>
 	);
 }

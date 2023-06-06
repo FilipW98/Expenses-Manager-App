@@ -11,6 +11,9 @@ const ExpensesFilter = (props:ExpensesFilterProps) => {
 
   const yearPickHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     const selectedYear = event.target.value
+    if (selectedYear.includes('2022')){
+      console.log("wybrany rok to 2022");
+    }
     props.onSetYear(selectedYear)
   }
 
