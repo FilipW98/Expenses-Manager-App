@@ -11,6 +11,7 @@ interface ExpenseItemProps {
 
 const ExpenseItem = (props: ExpenseItemProps) => {
 	return (
+		<li>
 		<Card className='expense-item'>
 			<ExpenseDate date={props.date}/>
 			<div className='expense-item__description'>
@@ -18,6 +19,7 @@ const ExpenseItem = (props: ExpenseItemProps) => {
 				<div className='expense-item__price'>{props.amount}zł</div>
 			</div>
 		</Card>
+		</li>
 	);
 }
 
