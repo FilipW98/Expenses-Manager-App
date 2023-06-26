@@ -1,5 +1,7 @@
+<div align="center">
+<h1> Expenses Manager App </h1>
+</div>
 
-# Expenses Manager App
 
 
 ## Tech Stack
