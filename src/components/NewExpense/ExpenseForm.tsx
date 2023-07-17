@@ -8,6 +8,7 @@ interface ExpenseFormProps {
 	  amount: number;
 	  date: Date;
 	}) => void;
+	onCancel: () => void;
   }
 
 const ExpenseForm = (props: ExpenseFormProps) => {
@@ -36,7 +37,6 @@ const ExpenseForm = (props: ExpenseFormProps) => {
 			date: new Date(enteredDate),
 		};
        props.onSaveExpenseData(expenseData);
-	   console.log("im in exenseForm");
         setTitle('')
 		setAmount('')
 		setDate('')
@@ -59,7 +59,7 @@ const ExpenseForm = (props: ExpenseFormProps) => {
 				</div>
 			</div>
 			<div className='new-expense__actions'>
-				<button type='submit'>Cancel</button>
+				<button onClick={props.onCancel} type='button'>Cancel</button>
 				<button type='submit'>Add Expense</button>
 			</div>
 
