@@ -4,6 +4,7 @@ import './Expenses.scss';
 import Card from '../UI/Card';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 interface ExpensesProps {
 	items: Array<{
@@ -32,6 +33,7 @@ function Expenses(props: ExpensesProps) {
 			<Card className='expenses'>
 				<ExpensesFilter selected={enteredYear} onSetYear={setYearHandler} />
 				<ExpensesList items= {filteredExpenses}/>
+				<ExpensesChart expenses={filteredExpenses}/>
 			</Card>
 		</div>
 	);

@@ -13,10 +13,14 @@ interface DataPoint {
 
 
 const Chart = (props:ChartProps) => {
+
+	const dataPointValues = props.dataPoints.map( dataPoint => dataPoint.value)
+	const totalMaximum = Math.max(...dataPointValues)
+
 	return (
 		<div className='chart'>
 			{props.dataPoints.map((dataPoint:DataPoint) => (
-				<ChartBar key={dataPoint.label} value={dataPoint.value} maxValue={100} label={dataPoint.label} />
+				<ChartBar key={dataPoint.label} value={dataPoint.value} maxValue={totalMaximum} label={dataPoint.label} />
 			))}
 		</div>
 	);
