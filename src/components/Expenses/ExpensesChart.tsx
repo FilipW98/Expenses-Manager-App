@@ -1,18 +1,14 @@
 import React from "react";
 import Chart from "../Chart/Chart"
-
 interface Expense {
     date: Date;
     amount: number;
   }
-  
   interface ExpensesChartProps {
     expenses: Expense[];
   }
 
-
 const ExpensesChart = (props: ExpensesChartProps) => {
-
 
     const chartDataPoints = [
         {label: "Jan", value: 0},
@@ -29,14 +25,11 @@ const ExpensesChart = (props: ExpensesChartProps) => {
         {label: "Dev", value: 0},
         ]
 
-
 for (const expense of props.expenses){
     const expenseMonth = expense.date.getMonth();
     chartDataPoints[expenseMonth].value += expense.amount;
 }
-
     return <Chart dataPoints={chartDataPoints}/>
 }
-
 
 export default ExpensesChart

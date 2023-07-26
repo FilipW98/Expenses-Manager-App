@@ -26,14 +26,12 @@ function Expenses(props: ExpensesProps) {
 		return expense.date.getFullYear().toString() === enteredYear;
 	});
 
-
-
 	return (
 		<div>
 			<Card className='expenses'>
 				<ExpensesFilter selected={enteredYear} onSetYear={setYearHandler} />
-				<ExpensesList items= {filteredExpenses}/>
 				<ExpensesChart expenses={filteredExpenses}/>
+				<ExpensesList items= {filteredExpenses}/>
 			</Card>
 		</div>
 	);

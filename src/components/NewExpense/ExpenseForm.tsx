@@ -33,7 +33,7 @@ const ExpenseForm = (props: ExpenseFormProps) => {
 
 		const expenseData = {
 			title: enteredTitle,
-			amount: parseFloat(enteredAmount),
+			amount: +parseFloat(enteredAmount),
 			date: new Date(enteredDate),
 		};
        props.onSaveExpenseData(expenseData);
