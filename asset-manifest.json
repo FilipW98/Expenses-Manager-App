@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Expenses-Manager-App/static/css/main.b2a82ae5.css",
+    "main.js": "/Expenses-Manager-App/static/js/main.7563e3fe.js",
+    "index.html": "/Expenses-Manager-App/index.html",
+    "main.b2a82ae5.css.map": "/Expenses-Manager-App/static/css/main.b2a82ae5.css.map",
+    "main.7563e3fe.js.map": "/Expenses-Manager-App/static/js/main.7563e3fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2a82ae5.css",
+    "static/js/main.7563e3fe.js"
+  ]
+}
